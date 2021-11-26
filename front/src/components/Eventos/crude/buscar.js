@@ -1,9 +1,9 @@
 import React from "react";
-import { request } from "../helper/helpers";
+import { request } from "../../helper/helpers";
 import { Container, Row, Col } from "react-bootstrap";
 
 // import './empleados.css';
-import DataGrid from "../../components/grid/grid";
+import DataGrid from "../../grid/grid";
 
 const columns = [
   {
@@ -37,13 +37,13 @@ export default class EmpleadosBuscar extends React.Component {
 
   render() {
     return (
-      <Container id="empleados-buscar-container">
+      <Container id="eventos-buscar-container">
         <Row>
-          <h1>Buscar Empleados</h1>
+          <h1>Buscar eventos</h1>
         </Row>
 
         <Row>
-          <DataGrid url="/empleados" columns={columns} />
+          <DataGrid url="/eventos" columns={columns} />
         </Row>
       </Container>
     );

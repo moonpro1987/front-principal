@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Login from "../Login/Login";
-import Eventos from "../Eventos/eventos.buscar";
+import Eventos from "../Eventos/index";
 import Home from "../Pages/Home/Home";
 import PrivateRoute from "../Auth/PrivateRoute";
 

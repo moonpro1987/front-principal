@@ -1,11 +1,11 @@
 import React from "react";
-import { Container, Row, Nav } from "react-bootstrap";
-import EmpleadosBuscar from "./crud/buscar";
-import EmpleadosCrear from "./crud/crear";
+import { Container, Nav, Row } from "react-bootstrap";
+import EventosBuscar from "./crude/buscar";
+import EventosCrear from "./crude/crear";
 
-import "./empleados.css";
+import "./eventos.css";
 
-export default class Empleados extends React.Component {
+export default class Eventos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,16 +14,16 @@ export default class Empleados extends React.Component {
   }
   render() {
     return (
-      <Container id="empleados-container">
+      <Container id="eventos-container">
         <Row>
           <Nav
             fill
             variant="tabs"
-            defaultActiveKey="buscar"
+            defaultActiveKey="crear"
             onSelect={(eventKey) => this.setState({ currentTab: eventKey })}
           >
             <Nav.Item>
-              <Nav.Link eventKey="buscar">Buscar</Nav.Link>
+              <Nav.Link eventKey="crear">Buscar</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="crear">Crear</Nav.Link>
@@ -31,11 +31,9 @@ export default class Empleados extends React.Component {
           </Nav>
         </Row>
         <Row>
-          {this.state.currentTab === "buscar" ? (
-            <EmpleadosBuscar />
-          ) : (
-            <EmpleadosCrear />
-          )}
+          {this.state.currentTab === "buscar" ? 
+            <EventosBuscar /> : null }
+          
         </Row>
       </Container>
     );

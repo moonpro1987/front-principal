@@ -4,6 +4,7 @@ import { CardGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
+
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -60,13 +61,19 @@ export default class Home extends React.Component {
             <Card.Title>Taller de Comunicación Asertiva</Card.Title>
             <Card.Text>
               Te invitamos a participar de este evento que permitirá generar
-              espacios de de mejora del clima organizaciional. dirigido a
+              espacios de de mejora del clima organizacional. dirigido a
               funcionarios de todos los niveles. Cierre de Inscripciones: 30 de
               Noviembre Hora:3 pm
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Button as="input" type="submit" value="Inscribir" />{" "}
+          <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => console.log(this.guardarEventos())}
+            >
+              Guardar Evento
+            </Button>
           </Card.Footer>
         </Card>
       </CardGroup>

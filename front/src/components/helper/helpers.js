@@ -38,25 +38,7 @@ export const request = {
 
   post: function (services, data) {
     let token = renovarSesion();
-    return axios.post(`${host}${services}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  },
-
-  put: function (services, data) {
-    let token = renovarSesion();
-    return axios.put(`${host}${services}`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-  },
-
-  delete: function (services) {
-    let token = renovarSesion();
-    return axios.delete(`${host}${services}`, {
+    return axios.post(`${host}${services}`, data,{
       headers: {
         Authorization: `Bearer ${token}`,
       },

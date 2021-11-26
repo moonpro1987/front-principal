@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "../Auth/PrivateRoute";
 
+import Home from "../Pages/Home/Home";
 import Login from "../Login/Login";
 import Eventos from "../Eventos/index";
-import Home from "../Pages/Home/Home";
-import PrivateRoute from "../Auth/PrivateRoute";
+
+
 
 export default function AppRouter() {
   return (

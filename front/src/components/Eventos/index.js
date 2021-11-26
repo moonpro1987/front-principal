@@ -1,16 +1,23 @@
-import React from "react";
-import { Container, Nav, Row } from "react-bootstrap";
-import EventosBuscar from "./crude/buscar";
-import EventosCrear from "./crude/crear";
+import React from 'react';
+import { Container, Row, Nav } from 'react-bootstrap';
+import EventosBuscar from './crude/buscar';
+import EventosCrear from './crude/crear';
 
-import "./eventos.css";
+import './eventos.css';
 
 export default class Eventos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: "buscar",
+      currentTab: 'buscar',
     };
+
+    this.changeTab = this.changeTab.bind(this);
+  }
+  changeTab(tab) {
+    this.setState({
+      currentTab: tab,
+    });
   }
   render() {
     return (
@@ -19,11 +26,11 @@ export default class Eventos extends React.Component {
           <Nav
             fill
             variant="tabs"
-            defaultActiveKey="crear"
+            defaultActiveKey="buscar"
             onSelect={(eventKey) => this.setState({ currentTab: eventKey })}
           >
             <Nav.Item>
-              <Nav.Link eventKey="crear">Buscar</Nav.Link>
+              <Nav.Link eventKey="buscar">Buscar</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="crear">Crear</Nav.Link>
@@ -31,9 +38,11 @@ export default class Eventos extends React.Component {
           </Nav>
         </Row>
         <Row>
-          {this.state.currentTab === "buscar" ? 
-            <EventosBuscar /> : null }
-          
+          {this.state.currentTab === 'buscar' ? (
+            <EventosBuscar />
+          ) : (
+            <EventosCrear changeTab={this.changeTab} />
+          )}
         </Row>
       </Container>
     );

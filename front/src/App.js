@@ -1,8 +1,8 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Navbar/Navbar";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar/Navbar';
 
-import AppRouter from "./components/Router/Router";
+import AppRouter from './components/Router/Router';
 
 function App() {
   return (

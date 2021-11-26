@@ -1,49 +1,52 @@
-import React from "react";
-import { request } from "../../helper/helpers";
-import { Container, Row, Col } from "react-bootstrap";
+import React from 'react';
+import { request } from '../../helper/helpers';
+import { Container, Row, Col } from 'react-bootstrap';
 
 // import './empleados.css';
-import DataGrid from "../../grid/grid";
+import DataGrid from '../../grid/grid';
+
 
 const columns = [
   {
-    dataField: "nomEvento",
-    text: "nomEvento",
+    dataField: 'nomEvento',
+    text: 'NomEvento',
   },
   {
-    dataField: "descripcion",
-    text: "descripcion",
+    dataField: 'descripcion',
+    text: 'Descripcion',
   },
   {
-    dataField: "fecha",
-    text: "fecha",
+    dataField: 'fecha',
+    text: 'Fecha',
   },
   {
-    dataField: "hora",
-    text: "hora",
+    dataField: 'hora',
+    text: 'hora',
   },
   {
-    dataField: "numAsistentes",
-    text: "numAsistentes",
+    dataField: 'numAsistentes',
+    text: 'numAsistentes',
   },
 ];
 
-export default class EmpleadosBuscar extends React.Component {
+export default class EventosBuscar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  componentDidMount() {}
+  componentDidMount() {
+    
+  }
 
   render() {
     return (
       <Container id="eventos-buscar-container">
         <Row>
-          <h1>Buscar eventos</h1>
+          <h1>Buscar Eventos</h1>
         </Row>
 
         <Row>
-          <DataGrid url="/eventos" columns={columns} />
+          <DataGrid url="/eventos" columns={columns}/>
         </Row>
       </Container>
     );

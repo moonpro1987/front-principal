@@ -19,14 +19,14 @@ export default class EventosCrear extends React.Component {
         descripcion: "",
         fecha: "",
         hora: "",
-        numAsistentes: "",        
+        numAsistentes: "",
       },
     };
     this.onExitedMessage = this.onExitedMessage.bind(this);
   }
   setValue(index, value) {
     this.setState({
-      evento: {
+      eventoo: {
         ...this.state.evento,
         [index]: value,
       },
@@ -106,9 +106,7 @@ export default class EventosCrear extends React.Component {
               />
             </Form.Group>
 
-            
-            <Button
-              id="btn-enviar"
+            <Button              
               variant="primary"
               onClick={() => console.log(this.guardarEventos())}
             >

@@ -12,12 +12,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 import logo from "../img/EBS.jpg";
+import Cookies from "universal-cookie/es6";
+
+
+const cookies = new Cookies();
 
 export default class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  logout() {
+    cookies.remove('_s');
+    window.location.reload();
+  }
+
   render() {
     return (
       <Navbar id="navbar" variant="dark">
@@ -42,7 +52,7 @@ export default class NavBar extends React.Component {
                 <Row>USUARIO</Row>
               </Dropdown.Header>
               <Dropdown.Divider />
-              <Dropdown.Item href="#/action-1">Cerrar Sesion</Dropdown.Item>
+              <Dropdown.Item onClick={this.logout}>Cerrar Sesión</Dropdown.Item>
               {/*<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>*/}
             </DropdownButton>

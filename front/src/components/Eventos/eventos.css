@@ -1,5 +1,5 @@
 #eventos-container {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 #eventos-buscar-container,
@@ -16,6 +16,17 @@
   float: right;
   padding-bottom: 10px;
 }
+
 .sr-only {
   font-size: 0;
+}
+
+#eventos-crear-container .form-label {
+  float: left;
+  margin-bottom: 10px;
+}
+
+#eventos-crear-container #btn-enviar {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }

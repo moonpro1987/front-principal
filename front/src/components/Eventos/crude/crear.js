@@ -26,7 +26,7 @@ export default class EventosCrear extends React.Component {
   }
   setValue(index, value) {
     this.setState({
-      eventoo: {
+      evento: {
         ...this.state.evento,
         [index]: value,
       },
@@ -106,7 +106,7 @@ export default class EventosCrear extends React.Component {
               />
             </Form.Group>
 
-            <Button              
+            <Button
               variant="primary"
               onClick={() => console.log(this.guardarEventos())}
             >

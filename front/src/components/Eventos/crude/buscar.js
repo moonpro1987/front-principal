@@ -46,7 +46,7 @@ export default class EventosBuscar extends React.Component {
         </Row>
 
         <Row>
-          <DataGrid url="/eventos" columns={columns}/>
+          <DataGrid url="/eventos" columns={columns}showEditButton={true}/>
         </Row>
       </Container>
     );

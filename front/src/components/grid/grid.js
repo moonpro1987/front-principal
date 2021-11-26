@@ -11,8 +11,10 @@ import { Row, Col } from 'react-bootstrap';
 import { request } from '../helper/helpers';
 import Loading from '../Loading/Loading';
 import Button from '@restart/ui/esm/Button';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faEdit } from '@fortawesome/free-solid-svg-icons';
+import { isUndefined } from 'util'
+
 
 const { SearchBar } = Search;
 export default class DataGrid extends React.Component {
@@ -22,7 +24,11 @@ export default class DataGrid extends React.Component {
       loading: false,
       rows: []
     };
+
+    if (this.props.showEditButton && !this.existsColumn('Editar')) 
+      this.props.columns.push(this.getEditButton());
   }
+  
   componentDidMount() {
     this.getData();
   }
@@ -41,16 +47,29 @@ export default class DataGrid extends React.Component {
         console.error(err);
       });
   }
+
+  existsColumn(colText) {
+    let col = this.props.columns.find((col) => col.text === colText);
+    return ! isUndefined(col);
+
+  }
+
   getEditButton() {
     return {
       text: 'editar',
       formatter: function priceFormatter(cell, row) {
         console.log(row);
-        return <Button>
-        </Button>;
+
+        return( 
+        <Button>
+          <FontAwesomeIcon icon={faEdit} />
+        </Button>
+        );
       },
     };
   }
+
+
   render() {
     const options = {
       custom: true,

@@ -4,7 +4,6 @@ import { CardGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -72,7 +71,7 @@ export default class Home extends React.Component {
               variant="primary"
               onClick={() => console.log(this.guardarEventos())}
             >
-              Guardar Evento
+              Inscribir al evento
             </Button>
           </Card.Footer>
         </Card>

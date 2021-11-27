@@ -13,7 +13,7 @@ import Loading from '../Loading/Loading';
 import Button from '@restart/ui/esm/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faEdit } from '@fortawesome/free-solid-svg-icons';
-import { isUndefined } from 'util'
+import { isUndefined } from 'util';
 
 
 const { SearchBar } = Search;
@@ -49,19 +49,19 @@ export default class DataGrid extends React.Component {
   }
 
   existsColumn(colText) {
-    let col = this.props.columns.find((col) => col.text === colText);
+    let col = this.props.columns.find((column) => column.text === colText);
     return ! isUndefined(col);
 
   }
 
   getEditButton() {
     return {
-      text: 'editar',
-      formatter: function priceFormatter(cell, row) {
-        console.log(row);
+      text: 'Editar',
+      formatter: (cell, row) => {
+        //console.log(row);
 
         return( 
-        <Button>
+        <Button onClick={() => this.props.onClickEditButton(row)}>
           <FontAwesomeIcon icon={faEdit} />
         </Button>
         );

@@ -33,9 +33,14 @@ export default class EventosBuscar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.onClickEditButton = this.onClickEditButton.bind(this);
   }
-  componentDidMount() {
-    
+  
+  onClickEditButton (row){
+    this.props.setIdEvento(row._id);
+
+    this.props.changeTab('editar');
   }
 
   render() {
@@ -46,7 +51,8 @@ export default class EventosBuscar extends React.Component {
         </Row>
 
         <Row>
-          <DataGrid url="/eventos" columns={columns}showEditButton={true}/>
+          <DataGrid url="/eventos" columns={columns}showEditButton={true}
+          onClickEditButton={this.onClickEditButton}/>
         </Row>
       </Container>
     );

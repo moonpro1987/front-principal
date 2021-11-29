@@ -1,4 +1,4 @@
-#message-prompt {
+#message-prompt #confirmation-prompts {
   display: flex;
   justify-content: center;
   align-items: center;

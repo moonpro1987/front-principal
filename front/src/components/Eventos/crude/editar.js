@@ -3,6 +3,7 @@ import { Container, Row, Form, Button } from "react-bootstrap";
 import { request } from "../../helper/helpers";
 import Loading from "../../Loading/Loading";
 import MessagePrompt from "../../prompts/message";
+import ConfirmationPrompts from "../../prompts/confirmation";
 
 export default class EventosEditar extends React.Component {
   constructor(props) {
@@ -14,6 +15,12 @@ export default class EventosEditar extends React.Component {
         text: "",
         show: false,
       },
+      confirmation: {
+        title: "Modificar Evento",
+        text: "¿Esta seguro que desea modificar el evento?",
+        show: false,
+      },
+
       loading: false,
       evento: {
         nomEvento: "",
@@ -24,6 +31,8 @@ export default class EventosEditar extends React.Component {
       },
     };
     this.onExitedMessage = this.onExitedMessage.bind(this);
+    this.onCancel = this.onCancel.bind(this);
+    this.onConfirm = this.onConfirm.bind(this);
   }
 
   componentDidMount() {
@@ -36,10 +45,10 @@ export default class EventosEditar extends React.Component {
       .get(`/eventos/${this.state.idEvento}`)
       .then((response) => {
         this.setState({
-        evento: response.data,
-        loading: false,
-      });
-    })
+          evento: response.data,
+          loading: false,
+        });
+      })
       .catch((err) => {
         console.error(err);
         this.setState({ loading: false });
@@ -78,6 +87,28 @@ export default class EventosEditar extends React.Component {
   onExitedMessage() {
     if (this.state.rediret) this.props.changeTab("buscar");
   }
+
+  onCancel() {
+    this.setState({
+      confirmation: {
+        ...this.state.confirmation,
+        show: false,
+      },
+    });
+  }
+
+  onConfirm() {
+    this.setState(
+      {
+        confirmation: {
+          ...this.state.confirmation,
+          show: false,
+        },
+      },
+      this.guardarEventos()
+    );
+  }
+
   render() {
     return (
       <Container id="eventos-crear-container">
@@ -87,6 +118,15 @@ export default class EventosEditar extends React.Component {
           duration={2500}
           onExited={this.onExitedMessage}
         />
+
+        <ConfirmationPrompts
+          show={this.state.confirmation.show}
+          title={this.state.confirmation.title}
+          text={this.state.confirmation.text}
+          onCancel={this.onCancel}
+          onConfirm={this.onConfirm}
+        />
+
         <Loading show={this.state.loading} />
         <Row>
           <h1>Editar Evento</h1>
@@ -135,7 +175,11 @@ export default class EventosEditar extends React.Component {
 
             <Button
               variant="primary"
-              onClick={() => console.log(this.guardarEventos())}
+              onClick={() =>
+                this.setState({
+                  confirmation: { ...this.state.confirmation, show: true },
+                })
+              }
             >
               Guardar Evento
             </Button>

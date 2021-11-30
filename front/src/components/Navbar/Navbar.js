@@ -22,14 +22,13 @@ export default class NavBar extends React.Component {
   }
 
   logout() {
-    cookies.remove("_s");
-    window.location.reload();
+    cookies.remove("token");
+    window.location.href = "/login";
   }
-
   render() {
     return (
       <Navbar id="navbar" variant="dark">
-        <img className="img-logo" src={logo} alt="logo" href="/home" />
+        <img className="img-logo" src={logo} alt="logo" />
         <Container>
           <Navbar.Brand href="/home">
             <h1>Eventos de Bienestar Social</h1>{" "}
@@ -57,7 +56,7 @@ export default class NavBar extends React.Component {
               <Dropdown.Item href="/eventos">Crud</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={() => this.logout()}>
-                Cerrar Sesión
+                Cerrar sesión
               </Dropdown.Item>
             </DropdownButton>
           </Navbar.Collapse>

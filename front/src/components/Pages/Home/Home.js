@@ -122,32 +122,6 @@ export default class Home extends React.Component {
         <Card>
           <Card.Img
             variant="top"
-            src="https://i.ibb.co/2ycBQbs/ball-g2a6e88ba0-1920.jpg"
-            alt="ball-g2a6e88ba0-1920"
-          />
-          <Card.Body>
-            <Card.Title>Torneo de Volley</Card.Title>
-            <Card.Text>
-              Para este mes traemos un torneo relampago de voleibol para
-              nuestros colaboradores entre los equipos ya conformados en la
-              semana del 18 al 23 de octubre aqui puedes inscribir a tu equipo.
-              Cierre de Inscripciones: 16 de Octubre Hora:3 pm
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <Button
-              id="btn-enviar"
-              variant="primary"
-              onClick={() => this.inscribirEvento()}
-            >
-              Inscribir al evento
-            </Button>
-          </Card.Footer>
-        </Card>
-
-        <Card>
-          <Card.Img
-            variant="top"
             src="https://i.ibb.co/7pYYff2/baby-g09c4acbb0-1920.jpg"
             alt="baby-g09c4acbb0-1920"
           />

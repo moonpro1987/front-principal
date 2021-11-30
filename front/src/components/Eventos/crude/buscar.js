@@ -7,7 +7,6 @@ import ConfirmationPrompts from "../../prompts/confirmation";
 import Loading from "../../Loading/Loading";
 import MessagePrompt from "../../prompts/message";
 
-
 const columns = [
   {
     dataField: "nomEvento",
@@ -43,7 +42,7 @@ export default class EventosBuscar extends React.Component {
         show: false,
       },
       message: {
-        text: '',
+        text: "",
         show: false,
       },
     };
@@ -70,8 +69,6 @@ export default class EventosBuscar extends React.Component {
     });
   }
 
-
-
   onCancel() {
     this.setState({
       confirmation: {
@@ -82,13 +79,14 @@ export default class EventosBuscar extends React.Component {
   }
 
   onConfirm() {
-    this.setState({
-      confirmation: {
-        ...this.state.confirmation,
-        show: false,
+    this.setState(
+      {
+        confirmation: {
+          ...this.state.confirmation,
+          show: false,
+        },
       },
-    },
-    this.eliminarEvento()    
+      this.eliminarEvento()
     );
   }
 
@@ -110,7 +108,6 @@ export default class EventosBuscar extends React.Component {
         console.error(err);
         this.setState({ loading: false });
       });
-
   }
 
   reloadPage() {
@@ -130,16 +127,14 @@ export default class EventosBuscar extends React.Component {
           onConfirm={this.onConfirm}
         />
 
-
-
         <MessagePrompt
           text={this.state.message.text}
           show={this.state.message.show}
           duration={2500}
-          onExited={this.onExitedMessage}        
+          onExited={this.onExitedMessage}
         />
 
-        <Loading show={this.state.loading}/>
+        <Loading show={this.state.loading} />
 
         <Row>
           <h1>Buscar Eventos</h1>

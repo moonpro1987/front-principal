@@ -9,13 +9,17 @@ export default class Home extends React.Component {
     super(props);
     this.state = {};
   }
+  inscribirEvento() {
+    alert("Evento inscrito");
+  }
+
   render() {
     return (
       <CardGroup>
         <Card>
           <Card.Img
             variant="top"
-            src="https://i.ibb.co/3FDnKk8/yoga-ga9cb854d5-1920.jpg"
+            src="https://i.ibb.co/30n44NP/yoga-ga9cb854d5-1920.jpg"
             alt="yoga-ga9cb854d5-1920"
           />
           <Card.Body>
@@ -27,7 +31,13 @@ export default class Home extends React.Component {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Button as="input" type="submit" value="Inscribir" />{" "}
+            <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => this.inscribirEvento()}
+            >
+              Inscribir al evento
+            </Button>
           </Card.Footer>
         </Card>
         <Card>
@@ -47,7 +57,13 @@ export default class Home extends React.Component {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Button as="input" type="submit" value="Inscribir" />{" "}
+            <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => this.inscribirEvento()}
+            >
+              Inscribir al evento
+            </Button>
           </Card.Footer>
         </Card>
         <Card>
@@ -66,10 +82,87 @@ export default class Home extends React.Component {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-          <Button
+            <Button
               id="btn-enviar"
               variant="primary"
-              onClick={() => console.log(this.guardarEventos())}
+              onClick={() => this.inscribirEvento()}
+            >
+              Inscribir al evento
+            </Button>
+          </Card.Footer>
+        </Card>
+
+        <Card>
+          <Card.Img
+            variant="top"
+            src="https://i.ibb.co/Rz09c5Z/football-gdcc60f72f-1920.jpg"
+            alt="football-gdcc60f72f-1920"
+          />
+
+          <Card.Body>
+            <Card.Title>Torneo de Futbol</Card.Title>
+            <Card.Text>
+              Bienestar Social invita a todos nuestros colaboradores a
+              participar en el primer torneo Futbol 5 masculino y femenino a
+              realizarse a partir del 25 de Noviembree CIERRE DE INSCRIPCIONES:
+              23 de Septiembre HORA: 6:00 PM
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => this.inscribirEvento()}
+            >
+              Inscribir al evento
+            </Button>
+          </Card.Footer>
+        </Card>
+
+        <Card>
+          <Card.Img
+            variant="top"
+            src="https://i.ibb.co/2ycBQbs/ball-g2a6e88ba0-1920.jpg"
+            alt="ball-g2a6e88ba0-1920"
+          />
+          <Card.Body>
+            <Card.Title>Torneo de Volley</Card.Title>
+            <Card.Text>
+              Para este mes traemos un torneo relampago de voleibol para
+              nuestros colaboradores entre los equipos ya conformados en la
+              semana del 18 al 23 de octubre aqui puedes inscribir a tu equipo.
+              Cierre de Inscripciones: 16 de Octubre Hora:3 pm
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => this.inscribirEvento()}
+            >
+              Inscribir al evento
+            </Button>
+          </Card.Footer>
+        </Card>
+
+        <Card>
+          <Card.Img
+            variant="top"
+            src="https://i.ibb.co/7pYYff2/baby-g09c4acbb0-1920.jpg"
+            alt="baby-g09c4acbb0-1920"
+          />
+          <Card.Body>
+            <Card.Title>Celebracion Novenas de Navidad</Card.Title>
+            <Card.Text>
+              Te invitamos a participar de nuestras novenas de aguinaldos, trae
+              a tus hijos para hacer de este un momento memorable en familia.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <Button
+              id="btn-enviar"
+              variant="primary"
+              onClick={() => this.inscribirEvento()}
             >
               Inscribir al evento
             </Button>

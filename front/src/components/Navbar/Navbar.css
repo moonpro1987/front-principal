@@ -19,8 +19,11 @@
     rgba(0, 212, 255, 1) 87%
   );
 }
+img {
+  margin-left: 50px;
+}
 
 #img-logo {
   background-image: url(../img/EBS.jpg) transparent;
+  
 }
-

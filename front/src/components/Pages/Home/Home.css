@@ -9,3 +9,10 @@
   max-width: 100%;
   height: auto !important;
 }
+.card-body {
+  padding: 2rem;
+	font-family: tahoma, arial, helvet;
+	font: size 14px;
+}
+
+
